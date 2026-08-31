@@ -7,7 +7,7 @@ def hitung_luas_persegi_panjang(c):
         print(f"jadi luas persegi panjangmu adalah {angkapjg * angkalbr}cm atau {angkapjg * angkalbr / 100}m")
         
         # Hentikan program jika pengguna mengetik 'stop'    
-        pilihan = input("Lanjut atau Stop? (lanjut/stop): ")   
+        pilihan = input("Lanjut atau Stop? (lanjut/stop Hitung luas persegi panjang): ")   
                 
         if pilihan == 'stop':
             print("Program selesai.")
@@ -22,7 +22,7 @@ def hitung_keliling_persegi_panjang(c):
         print(f"jadi luas persegi panjangmu adalah {2 * angkapjg * angkalbr}cm atau {2 * angkapjg * angkalbr / 100}m")
         
         # Hentikan program jika pengguna mengetik 'stop'    
-        pilihan = input("Lanjut atau Stop? (lanjut/stop): ")   
+        pilihan = input("Lanjut atau Stop? (lanjut/stop hitung keliling persegi panjang): ")   
                 
         if pilihan == 'stop':
             print("Program selesai.")
@@ -37,7 +37,7 @@ def hitung_luas_jajar_genjang(c):
         print(f"jadi luas jajar genjangmu adalah {angkaals * angkatgi}cm atau {angkaals * angkatgi / 100}m")
         
         # Hentikan program jika pengguna mengetik 'stop'    
-        pilihan = input("Lanjut atau Stop? (lanjut/stop): ")   
+        pilihan = input("Lanjut atau Stop? (lanjut/stop hitung luas jajar genjang): ")   
                 
         if pilihan == 'stop':
             print("Program selesai.")
