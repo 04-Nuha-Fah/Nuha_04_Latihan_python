@@ -12,8 +12,8 @@ if a == 2:
 if a == 3:
     print(ModulMath.pembagian(print("Pembagian\nMasukkan Angkamu")))
 if a == 4:
-    print(ModulBangunDatar.hitung_luas_persegi_panjang(print("Hitung Luas Persegi Panjangmu")))
+    print(ModulBangunDatar.hitung_luas_persegi_panjang(print("Hitung Luas Persegi Panjangmu\nMasukkan Angkamu")))
 if a == 5:
-    print(ModulBangunDatar.hitung_keliling_persegi_panjang(print("Hitung Keliling Persegi Panjangmu")))
+    print(ModulBangunDatar.hitung_keliling_persegi_panjang(print("Hitung Keliling Persegi Panjangmu\nMsukkan Angkamu")))
 if a == 6:
-    print(ModulBangunDatar.hitung_luas_jajar_genjang(print("Hitung Luas Jajar Genjangmu")))
+    print(ModulBangunDatar.hitung_luas_jajar_genjang(print("Hitung Luas Jajar Genjangmu\nMasukkan Angkamu")))
