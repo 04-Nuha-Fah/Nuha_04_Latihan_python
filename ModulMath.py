@@ -41,7 +41,7 @@ def ganjil_genap(a):
             print(f"{ank} adalah bilangan GANJIL")
             
         # Hentikan program jika pengguna mengetik 'stop'    
-        pilihan = input("Lanjut atau Stop? (lanjut/stop): ")   
+        pilihan = input("Lanjut atau Stop? (lanjut/stop ganjil genap): ")   
         
         if pilihan == 'stop':
             print("Program selesai.")
@@ -55,7 +55,7 @@ def perkalian(b):
         print(f"{angka} * {ank} = {angka * ank}")
         
         # Hentikan program jika pengguna mengetik 'stop'    
-        pilihan = input("Lanjut atau Stop? (lanjut/stop): ")   
+        pilihan = input("Lanjut atau Stop? (lanjut/stop perkalian): ")   
                 
         if pilihan == 'stop':
             print("Program selesai.")
@@ -69,7 +69,7 @@ def pembagian(c):
         print(f"{angka} / {ank} = {angka / ank}")
         
         # Hentikan program jika pengguna mengetik 'stop'    
-        pilihan = input("Lanjut atau Stop? (lanjut/stop): ")   
+        pilihan = input("Lanjut atau Stop? (lanjut/stop pembagian): ")   
                 
         if pilihan == 'stop':
             print("Program selesai.")
