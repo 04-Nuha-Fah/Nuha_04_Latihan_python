@@ -1,7 +1,12 @@
 while True:
     import ModulMath
     import ModulBangunDatar
-
+    import Login
+    
+    print("login")
+    print(Login.login(...))
+    print("")
+    
     print("Menu Modul")
     print("1.Ganjil Genap\n2.Perkalian\n3.Pembagian\n4.Luas Persegi Panjang\n5.Keliling Persegi Panjang\n6.Luas Jajar Genjang")
     print("")
