@@ -345,7 +345,3 @@ frame.pack(expand=True)
 show_login()
 
 gui.mainloop()
-
-show_login()
-
-gui.mainloop()
