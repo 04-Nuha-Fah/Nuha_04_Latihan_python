@@ -11,8 +11,23 @@ DB_CONFIG = {
 }
 
 
+gui = tk.Tk()
+gui.geometry("480x480")
+gui.title("GUI MODUL")
+gui.config(background="#333333")
+
+try:
+    icon = tk.PhotoImage(file="Icon.png")
+    gui.iconphoto(True, icon)
+except tk.TclError:
+    pass
+
+frame = tk.Frame(gui, bg="#333333")
+frame.pack(expand=True)
+
 def get_connection():
     return mysql.connector.connect(**DB_CONFIG)
+
 
 #Signin
 def signin():
@@ -61,6 +76,7 @@ def signin():
             mycursor.close()
         if mydb:
             mydb.close()
+
 
 #Signup
 def signup():
@@ -250,6 +266,245 @@ def show_signup():
         command=show_login
     ).grid(row=6, column=1, pady=10)
     
+
+def gui_luas_persegi_panjang():
+    clear_frame()
+    tk.Label(
+        frame,
+        text="Luas PERSEGI PANJANG",
+        font=("Arial", 22, "bold"),
+        bg="#FF3399"
+        
+    ).pack(pady=30)
+
+
+    tk.Label(
+        frame,
+        text="Panjang",
+        font=("Arial", 13),
+        bg="#FF3399"
+    ).pack()
+
+    entry_panjang = tk.Entry(
+        frame,
+        font=("Arial", 13),
+        width=25
+    )
+    entry_panjang.pack(pady=5)
+
+    tk.Label(
+        frame,
+        text="Lebar",
+        font=("Arial", 13),
+        bg="#FF3399"
+    ).pack()
+
+    entry_lebar = tk.Entry(
+        frame,
+        font=("Arial", 13),
+        width=25
+    )
+    entry_lebar.pack(pady=5)
+
+    hasil = tk.Label(
+        frame,
+        text="Hasil: -",
+        font=("Arial", 15, "bold")
+    )
+    hasil.pack(pady=20)
+
+
+    def hitung():
+        try:
+            panjang = float(entry_panjang.get())
+            lebar = float(entry_lebar.get())
+
+            luas = panjang * lebar
+
+            hasil.config(
+                text=f"Luas = {luas:g} cm²"
+            )
+
+        except ValueError:
+            messagebox.showerror(
+                "Error",
+                "Masukkan angka yang benar!"
+            )
+
+    tk.Button(
+        frame,
+        text="HITUNG",
+        font=("Arial", 13, "bold"),
+        width=20,
+        command=hitung,
+        bg="#FF3399"
+    ).pack(pady=5)
+
+    tk.Button(
+        frame,
+        text="Kembali",
+        font=("Arial", 11),
+        width=20,
+        command=Modul_MTK
+    ).pack(pady=10)
+    
+    
+def gui_keliling_persegi_panjang():
+    clear_frame()
+
+    tk.Label(
+        frame,
+        text="KELILING PERSEGI PANJANG",
+        font=("Arial", 22, "bold"),
+        bg="#FF3399"
+    ).pack(pady=30)
+
+    tk.Label(
+        frame,
+        text="Panjang",
+        font=("Arial", 13),
+        bg="#FF3399"
+    ).pack()
+
+    entry_panjang = tk.Entry(
+        frame,
+        font=("Arial", 13),
+        width=25
+    )
+    entry_panjang.pack(pady=5)
+
+    tk.Label(
+        frame,
+        text="Lebar",
+        font=("Arial", 13),
+        bg="#FF3399"
+    ).pack()
+
+    entry_lebar = tk.Entry(
+        frame,
+        font=("Arial", 13),
+        width=25
+    )
+    entry_lebar.pack(pady=5)
+
+    hasil = tk.Label(
+        frame,
+        text="Hasil: -",
+        font=("Arial", 15, "bold"),
+    )
+    hasil.pack(pady=20)
+
+
+    def hitung():
+        try:
+            panjang = float(entry_panjang.get())
+            lebar = float(entry_lebar.get())
+
+            keliling = 2 * (panjang + lebar)
+
+            hasil.config(
+                text=f"Keliling = {keliling:g} cm"
+            )
+
+        except ValueError:
+            messagebox.showerror(
+                "Error",
+                "Masukkan angka yang benar!"
+            )
+
+    tk.Button(
+        frame,
+        text="HITUNG",
+        font=("Arial", 13, "bold"),
+        width=20,
+        command=hitung,
+        bg="#FF3399"
+    ).pack(pady=5)
+
+    tk.Button(
+        frame,
+        text="Kembali",
+        font=("Arial", 11),
+        width=20,
+        command=Modul_MTK
+    ).pack(pady=10)
+
+
+def gui_luas_jajar_genjang():
+    clear_frame()
+
+    tk.Label(
+        frame,
+        text="LUAS JAJAR GENJANG",
+        font=("Arial", 22, "bold")
+    ).pack(pady=30)
+
+    tk.Label(
+        frame,
+        text="Alas",
+        font=("Arial", 13)
+    ).pack()
+
+    entry_alas = tk.Entry(
+        frame,
+        font=("Arial", 13),
+        width=25
+    )
+    entry_alas.pack(pady=5)
+
+    tk.Label(
+        frame,
+        text="Tinggi",
+        font=("Arial", 13)
+    ).pack()
+
+    entry_tinggi = tk.Entry(
+        frame,
+        font=("Arial", 13),
+        width=25
+    )
+    entry_tinggi.pack(pady=5)
+
+    hasil = tk.Label(
+        frame,
+        text="Hasil: -",
+        font=("Arial", 15, "bold")
+    )
+    hasil.pack(pady=20)
+
+    def hitung():
+        try:
+            alas = float(entry_alas.get())
+            tinggi = float(entry_tinggi.get())
+
+            luas = alas * tinggi
+
+            hasil.config(
+                text=f"Luas = {luas:g} cm²"
+            )
+
+        except ValueError:
+            messagebox.showerror(
+                "Error",
+                "Masukkan angka yang benar!"
+            )
+
+    tk.Button(
+        frame,
+        text="HITUNG",
+        font=("Arial", 13, "bold"),
+        width=20,
+        command=hitung
+    ).pack(pady=5)
+
+    tk.Button(
+        frame,
+        text="Kembali",
+        font=("Arial", 11),
+        width=20,
+        command=Modul_MTK
+    ).pack(pady=10)
+    
     
 def Modul_MTK():
     clear_frame()
@@ -262,6 +517,8 @@ def Modul_MTK():
         bg="#333333",
     ).grid(row=0, column=1, pady=16)
     
+    
+    
     tk.Button(
         frame,
         text="Ganjil / Genap",
@@ -270,7 +527,7 @@ def Modul_MTK():
         bg="#333333",
         width=15,
         height=5
-        ).grid(row=1, column=0, pady=16)
+    ).grid(row=1, column=0, pady=16)
     
     tk.Button(
         frame,
@@ -279,7 +536,7 @@ def Modul_MTK():
         fg="white",
         bg="#333333",
         width=15,
-        height=5
+        height=5,
     ).grid(row=2,column=0, pady=16)
     
     tk.Button(
@@ -299,7 +556,8 @@ def Modul_MTK():
         fg="white",
         bg="#333333",
         width=15,
-        height=5
+        height=5,
+        command=gui_luas_persegi_panjang
     ).grid(row=1,column=2, pady=16)
     
     tk.Button(
@@ -309,7 +567,8 @@ def Modul_MTK():
         fg="white",
         bg="#333333",
         width=15,
-        height=5
+        height=5,
+        command=gui_keliling_persegi_panjang
     ).grid(row=2,column=2, pady=16)
     
     tk.Button(
@@ -328,20 +587,9 @@ def Modul_MTK():
 # =========================
 # GUI UTAMA
 # =========================
-gui = tk.Tk()
-gui.geometry("480x480")
-gui.title("GUI MODUL")
-gui.config(background="#333333")
 
-try:
-    icon = tk.PhotoImage(file="Icon.png")
-    gui.iconphoto(True, icon)
-except tk.TclError:
-    pass
-
-frame = tk.Frame(gui, bg="#333333")
-frame.pack(expand=True)
 
 show_login()
 
 gui.mainloop()
+
