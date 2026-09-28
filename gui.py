@@ -2,10 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import mysql.connector
 
-
-# =========================
-# KONFIGURASI DATABASE
-# =========================
+#Database
 DB_CONFIG = {
     "host": "localhost",
     "user": "root",
@@ -14,13 +11,10 @@ DB_CONFIG = {
 }
 
 
-# =========================
-# FUNGSI DATABASE
-# =========================
 def get_connection():
     return mysql.connector.connect(**DB_CONFIG)
 
-
+#Signin
 def signin():
     username = user_entry.get().strip()
     password = password_entry.get()
@@ -47,10 +41,7 @@ def signin():
         result = mycursor.fetchone()
 
         if result:
-            messagebox.showinfo(
-                "Login",
-                "You Successfully Logged In"
-            )
+            Modul_MTK()
             user_entry.delete(0, tk.END)
             password_entry.delete(0, tk.END)
         else:
@@ -71,7 +62,7 @@ def signin():
         if mydb:
             mydb.close()
 
-
+#Signup
 def signup():
     username = user_entry.get().strip()
     password = password_entry.get()
@@ -131,14 +122,11 @@ def signup():
             mydb.close()
 
 
-# =========================
-# FUNGSI PINDAH HALAMAN
-# =========================
 def clear_frame():
     for widget in frame.winfo_children():
         widget.destroy()
 
-
+#GUI Signin
 def show_login():
     clear_frame()
 
@@ -261,6 +249,80 @@ def show_signup():
         bg="#555555",
         command=show_login
     ).grid(row=6, column=1, pady=10)
+    
+    
+def Modul_MTK():
+    clear_frame()
+
+    tk.Label(
+        frame,
+        text="Modul Matematika",
+        font=("Arial", 25, "bold"),
+        fg="white",
+        bg="#333333",
+    ).grid(row=0, column=1, pady=16)
+    
+    tk.Button(
+        frame,
+        text="Ganjil / Genap",
+        font=("Arial", 16),
+        fg="white",
+        bg="#333333",
+        width=15,
+        height=5
+        ).grid(row=1, column=0, pady=16)
+    
+    tk.Button(
+        frame,
+        text="Perkalian",
+        font=("Arial", 16),
+        fg="white",
+        bg="#333333",
+        width=15,
+        height=5
+    ).grid(row=2,column=0, pady=16)
+    
+    tk.Button(
+        frame,
+        text="Pembagian",
+        font=("Arial", 16),
+        fg="white",
+        bg="#333333",
+        width=15,
+        height=5
+    ).grid(row=3,column=0, pady=16)
+    
+    tk.Button(
+        frame,
+        text="L Persegi Panjang",
+        font=("Arial", 16),
+        fg="white",
+        bg="#333333",
+        width=15,
+        height=5
+    ).grid(row=1,column=2, pady=16)
+    
+    tk.Button(
+        frame,
+        text="K Persegi Panjang",
+        font=("Arial", 16),
+        fg="white",
+        bg="#333333",
+        width=15,
+        height=5
+    ).grid(row=2,column=2, pady=16)
+    
+    tk.Button(
+        frame,
+        text="K Persegi Panjang",
+        font=("Arial", 16),
+        fg="white",
+        bg="#333333",
+        width=15,
+        height=5
+    ).grid(row=3,column=2, pady=16)
+    
+    
 
 
 # =========================
@@ -268,7 +330,7 @@ def show_signup():
 # =========================
 gui = tk.Tk()
 gui.geometry("480x480")
-gui.title("GUI LOGIN")
+gui.title("GUI MODUL")
 gui.config(background="#333333")
 
 try:
@@ -279,6 +341,10 @@ except tk.TclError:
 
 frame = tk.Frame(gui, bg="#333333")
 frame.pack(expand=True)
+
+show_login()
+
+gui.mainloop()
 
 show_login()
 
