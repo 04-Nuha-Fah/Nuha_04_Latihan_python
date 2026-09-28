@@ -1,37 +1,37 @@
-#Ganjil Genap#
+Ganjil Genap
 
-#a = int(input("Angka: "))
-#if a % 2 == 0:
-    #print(f"{a} adalah bilangan GENAP")
-#else:
-    #print(f"{a} adalah bilangan GANJIL")
+a = int(input("Angka: "))
+if a % 2 == 0:
+    print(f"{a} adalah bilangan GENAP")
+else:
+    print(f"{a} adalah bilangan GANJIL")
     
-#b = int(input("Angka: "))
-#if b // 2 * 2 == b:
-    #print(f"{b} adalah bilangan GENAP")
-#else:
-    #print(f"{b} adalah bilangan GANJIL")
+b = int(input("Angka: "))
+if b // 2 * 2 == b:
+    print(f"{b} adalah bilangan GENAP")
+else:
+    print(f"{b} adalah bilangan GANJIL")
     
     
-#Perulangan Ganjil genap#
+Perulangan Ganjil genap#
 
-#while True:
+while True:
     
-    #a = int(input("Angka: "))
-    #if a % 2 == 0:
-        #print(f"{a} adalah bilangan GENAP")
-    #else:
-        #print(f"{a} adalah bilangan GANJIL")
+    a = int(input("Angka: "))
+    if a % 2 == 0:
+        print(f"{a} adalah bilangan GENAP")
+    else:
+        print(f"{a} adalah bilangan GANJIL")
         
-    #if a == 100:
-        #break
+    if a == 100:
+        break
     
-#print("selesai")
+print("selesai")
 
 
 #Modularitas
 
-#Modul Ganjil_Genap
+Modul Ganjil_Genap
 def ganjil_genap(a):
     while True:
         ank = int(input("angkamu = "))
